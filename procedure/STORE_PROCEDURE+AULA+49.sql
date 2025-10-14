@@ -1,0 +1,47 @@
+USE [TOTVSADV]
+GO
+
+/****** Object:  StoredProcedure [dbo].[VERIFICA_CLIENTE]    Script Date: 01/12/2021 14:26:12 ******/
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'VERIFICA_CLIENTE')
+DROP PROCEDURE [dbo].[VERIFICA_CLIENTE]
+GO
+
+/****** Object:  StoredProcedure [dbo].[VERIFICA_CLIENTE]    Script Date: 01/12/2021 14:26:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- Procedure creation 
+CREATE PROCEDURE [dbo].[VERIFICA_CLIENTE] ( @IN_PESQUISA Char(100) ,  @OUT_CODIGO Char(6)  output ) 
+AS
+ 
+-- Declaration of variables
+DECLARE @cCODIGO Char( 6)
+DECLARE @name Char(100)
+
+BEGIN
+
+
+DECLARE TABELA insensitive CURSOR FOR
+
+	SELECT TOP 1 A1_COD FROM SA1990 WHERE A1_NOME LIKE '%'+RTRIM(@IN_PESQUISA)+'%'
+	
+	OPEN TABELA
+	FETCH TABELA INTO  @name 
+
+	WHILE @@FETCH_STATUS = 0
+		BEGIN
+
+			SET @OUT_CODIGO = @name
+
+			FETCH TABELA INTO  @name
+
+		END
+
+	CLOSE TABELA
+	DEALLOCATE TABELA
+END
+
+RETURN 	
