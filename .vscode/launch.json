@@ -9,6 +9,7 @@
 			"cwb": "${workspaceFolder}",
 			"smartclientBin": "../totvs/bin/smartclient/smartclient.exe",
 			"isMultiSession": true,
+			"enableMultiThread": true,
 			"enableTableSync": true,
 			"extendFeatures": {
 				"charDetails": false

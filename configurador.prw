@@ -1,1 +1,2 @@
-criaÃ§Ã£o de tela no configurador
+criação de tela no configurador
+store procedure

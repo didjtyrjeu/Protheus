@@ -14,10 +14,10 @@ User Function MOD1_MVC()
 Local oBrowse
 
 oBrowse := FWMBrowse():New()
-oBrowse:SetAlias('SZ1')
-oBrowse:SetDescription('Cadastro de UM Cliente')
-oBrowse:AddLegend( "Z1_TIPO=='D'", "YELLOW", "Divide"  )
-oBrowse:AddLegend( "Z1_TIPO=='M'", "GREEN"  , "Multiplica"  )
+oBrowse:SetAlias('SA3')
+oBrowse:SetDescription('Cadastro de UM Vendedor')
+//oBrowse:AddLegend( "Z1_TIPO=='D'", "YELLOW", "Divide"  )
+//oBrowse:AddLegend( "Z1_TIPO=='M'", "GREEN"  , "Multiplica"  )
 //oBrowse:SetFilterDefault( "Z1_TIPO=='M'" )
 
 oBrowse:DisableDetails()
@@ -62,7 +62,7 @@ montagem modelo dados em MVC
 
 Static Function ModelDef()
 // Cria a estrutura a ser usada no Modelo de Dados
-Local oStruSZ1 := FWFormStruct( 1, 'SZ1', /*bAvalCampo*/,/*lViewUsado*/ )
+Local oStruSZ1 := FWFormStruct( 1, 'SA3', /*bAvalCampo*/,/*lViewUsado*/ )
 Local oModel
  
 // Remove campos da estrutura                        
@@ -77,13 +77,13 @@ oModel := MPFormModel():New('MOD1MVCM', /*bPreValidacao*/, /*bPosValidacao*/, /*
 oModel:AddFields( 'SZ1MASTER', /*cOwner*/, oStruSZ1, /*bPreValidacao*/, /*bPosValidacao*/, /*bCarga*/ )
 
 //Define a chave primaria utilizada pelo modelo
-oModel:SetPrimaryKey({'Z1_FILIAL', 'Z1_CLIENT', 'Z1_LOJA' })
+oModel:SetPrimaryKey({'A3_FILIAL', 'A3_COD'})
 
 // Adiciona a descricao do Modelo de Dados
 oModel:SetDescription( 'Modelo de Dados de UM Cliente' )
 
 // Adiciona a descricao do Componente do Modelo de Dados
-oModel:GetModel( 'SZ1MASTER' ):SetDescription( 'Dados da UM Cliente' )
+oModel:GetModel( 'SZ1MASTER' ):SetDescription( 'Dados da UM Vendedor' )
 
 // Liga a validação da ativacao do Modelo de Dados
 oModel:SetVldActivate( { |oModel| MOD1ACT( oModel ) } )
@@ -104,7 +104,7 @@ Static Function ViewDef()
 // Cria um objeto de Modelo de Dados baseado no ModelDef do fonte informado
 Local oModel   := FWLoadModel( 'MOD1_MVC' ) //ModelDef() //FWLoadModel( 'MOD1_MVC' )
 // Cria a estrutura a ser usada na View
-Local oStruSZ1 := FWFormStruct( 2, 'SZ1' )
+Local oStruSZ1 := FWFormStruct( 2, 'SA3' )
 
 Local oView  
 
@@ -116,7 +116,7 @@ oView := FWFormView():New()
 oView:SetModel( oModel )
 
 //Adiciona no nosso View um controle do tipo FormFields(antiga enchoice)
-oView:AddField( 'VIEW_SZ1', oStruSZ1, 'SZ1MASTER' )
+oView:AddField( 'VIEW_SA3', oStruSZ1, 'SZ1MASTER' )
 
 //remove campo estrutura
 //oStruSZ1:RemoveField( 'Z1_FATOR' )
@@ -126,7 +126,7 @@ oView:AddField( 'VIEW_SZ1', oStruSZ1, 'SZ1MASTER' )
 oView:CreateHorizontalBox( 'TELA' , 100 )
 
 // Relaciona o ID da View com o "box" para exibicao
-oView:SetOwnerView( 'VIEW_SZ1', 'TELA' )
+oView:SetOwnerView( 'VIEW_SA3', 'TELA' )
 
 //Força o fechamento da janela na confirmação
 oView:SetCloseOnOk({||.T.})
@@ -148,7 +148,7 @@ Local nOperation := oModel:GetOperation()
 Local lRet       := .T.
 
 If nOperation == 4
-	If Empty( oModel:GetValue( 'SZ1MASTER', 'Z1_MVC' ) )
+	If Empty( oModel:GetValue( 'SZ1MASTER', 'A3_MVC' ) )
 		Help( ,, 'HELP',, 'Informe o campo mvc', 1, 0)
 		lRet := .F.
 	EndIf
@@ -179,7 +179,7 @@ If nOperation == 5 .AND. lRet
 	cTmp    := GetNextAlias()
 
 	
-	cQuery  := " SELECT Z1_CLIENT FROM " + RetSqlName( 'SZ1' ) + " Z1 "
+	cQuery  := " SELECT A3_Vendedor FROM " + RetSqlName( 'SA3' ) + " A3 "
 	cQuery  += " WHERE EXISTS ( "
 	cQuery  += "       SELECT 1 FROM " + RetSqlName( 'SA1' ) + " A1 "
 	cQuery  += "        WHERE Z1_CLIENT = A1_COD AND Z1_LOJA = A1_LOJA"
