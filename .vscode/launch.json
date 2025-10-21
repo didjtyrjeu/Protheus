@@ -14,5 +14,11 @@
 				"charDetails": false
 			}
 		}
-	]
+	],
+	"lastPrograms": [
+		{
+			"label": "teste"
+		}
+	],
+	"lastProgramExecuted": "teste"
 }
