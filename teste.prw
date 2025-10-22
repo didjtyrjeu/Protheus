@@ -1,6 +1,6 @@
 #include "protheus.ch"
 
-User Function Teste()
+user function teste()
 
     Alert("Teste")
 Return 
