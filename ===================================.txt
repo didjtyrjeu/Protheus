@@ -1,36 +1,4 @@
-===================================
-
-A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) (Framework Microsoft SqlClient Data Provider)
-
-------------------------------
-Para obter ajuda, clique em: https://go.microsoft.com/fwlink?ProdName=Microsoft%20SQL%20Server&EvtSrc=MSSQLServer&EvtID=53&LinkId=20476
-
-------------------------------
-Número do Erro: 53
-Gravidade: 20
-Estado: 0
-
-
-------------------------------
-Local do Programa:
-
-   em Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   em Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   em Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover, Boolean isFirstTransparentAttempt, ServerCertificateValidationCallback serverCallback, ClientCertificateRetrievalCallback clientCallback, Boolean useOriginalAddressInfo, Boolean disableTnir)
-   em Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover, Boolean isFirstTransparentAttempt, Boolean disableTnir)
-   em Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   em Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   em Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, ServerCertificateValidationCallback serverCallback, ClientCertificateRetrievalCallback clientCallback, DbConnectionPool pool, String accessToken, SqlClientOriginalNetworkAddressInfo originalNetworkAddressInfo, Boolean applyTransientFaultHandling)
-   em Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   em Microsoft.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
-   em Microsoft.Data.ProviderBase.DbConnectionFactory.<>c__DisplayClass31_0.<TryGetConnection>b__1(Task`1 _)
-   em System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
-   em System.Threading.Tasks.Task.Execute()
---- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
-   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   em Microsoft.SqlServer.ConnectionDlg.UI.ConnectionDialogViewModel.<OpenConnectionAsync>d__55.MoveNext()
-
-===================================
-
-O caminho da rede não foi encontrado
+[Info  - 10:13:52 AM] Starting recompile.
+[Info  - 10:13:52 AM] Starting build for environment teste.
+[Error - 10:13:52 AM] Start build error: Server returned: Session [teste] not found in appserver.ini. Verify the "Environment in the Server" 
+File C:\advtec9\lib\config.cpp; line 78
