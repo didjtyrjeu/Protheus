@@ -1,3 +1,24 @@
 {
-	"version": "0.2.0"
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "totvs_language_debug",
+			"request": "launch",
+			"name": "Depuração do idioma TOTVS",
+			"program": "${command:AskForProgramName}",
+			"smartclientBin": "C:\\Totvs12\\Totvs12\\Protheus\\bin\\smartclient\\SmartClient.exe",
+			"isMultiSession": true,
+			"enableTableSync": false,
+			"ignoreFiles": true,
+			"language": "portuguese",
+			"args": [],
+			"env": {}
+		}
+	],
+	"lastPrograms": [
+		{
+			"label": "u_teste"
+		}
+	],
+	"lastProgramExecuted": "u_teste"
 }

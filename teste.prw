@@ -1,4 +1,4 @@
-#include "protheus.ch"
+#Include "Protheus.ch"
 
 user function teste()
 

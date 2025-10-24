@@ -6,7 +6,7 @@
 //------------------------------------------------------------------------------------------
 /*/{Protheus.doc} ABRESZ1
 Manutenção de dados em SB1-Descricao Generica do Produto.
-
+asdasd
 @author    paulo.bindo
 @version   11.3.10.201812061821
 @since     21/06/2019

@@ -1,4 +1,24 @@
-[Info  - 10:13:52 AM] Starting recompile.
-[Info  - 10:13:52 AM] Starting build for environment teste.
-[Error - 10:13:52 AM] Start build error: Server returned: Session [teste] not found in appserver.ini. Verify the "Environment in the Server" 
-File C:\advtec9\lib\config.cpp; line 78
+
+THREAD ERROR ([15520], ryoshida, TI-05)   24/10/2025 09:41:09
+invalid typecast in file c:\advtec9\advpl\instrvar.inl at line 715
+ on A430AUTO(SIGACUSB.PRX) 17/06/2015 11:03:48 line : 9359
+
+[TOTVS build: 7.00.131227A-20150825 NG]
+Called from A430AUTO(SIGACUSB.PRX) 17/06/2015 11:03:48 line : 9359
+Called from FATLOAD(FATXFUN.PRX) 13/07/2015 09:39:48 line : 8937
+Called from __EXECUTE(APLIB090.PRW) 14/07/2015 16:20:18 line : 580
+Called from {|| __Execute('FATLoad()','xxxxxxxxxx','Faturamento','              5',,,.T.)}(APLIB090.PRW) 14/07/2015 16:20:18
+Called from ONLOADEXECUTE(APLIB090.PRW) 14/07/2015 16:20:18 line : 3256
+Called from FWSETENVIRONMENT(FWAPP.PRW) 12/06/2015 13:42:56 line : 1815
+Called from APPAFTERENV(FWAPP.PRW) 12/06/2015 13:42:56 line : 1333
+Called from {|oDesktop,oUserAuth,oParam| AppAfterEnv(oDesktop,oUserAuth,oParam)}(FWAPP.PRW) 12/06/2015 13:42:56
+Called from {||oParam:=FWEnvParam():New(),oParam:dDate:=dDataBase,oParam:cGroup:=cGroup,oParam:cFil:=cFil,oParam:cAmb:=cAmb,oParam:lMnuInf:=lMDIMenuInfo,oParam:lGoEmpFil:=lGoEmpFil,If(Eval(bValid,oDesktop,oUserAuth,oParam),Eval(bNext,oDesktop,oUserAuth,oParam),),FWStartKeys()}(FWUISKIN.PRW) 17/06/2015 17:42:12
+Called from ::TWINDOW:ACTIVATE line : 629
+Called from MSAPP:ACTIVATE(FWAPP.PRW) 12/06/2015 13:42:56 line : 129
+Publicas
+  Public 1: CPAISLOC(C) :BRA
+  Public 2: LWSISPORTAL(L) :.F.
+  Public 3: OAPP(O) :O
+  Public 4: HELP(L) :.F.
+  Public 5: USIGAADV(L) :.F.
+  Public 6: CACESSO(C) :SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
